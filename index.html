@@ -69,12 +69,15 @@ $("#start").on("click", function () {
         {
             var questionOne = ("<div>'What is a good way to find coding errors?'</div>")
             var questionOneAnsOne = $('<input type="button" value="text find"/>');
-            var questionOneAnsTwo = "console.log"
-            var questionOneAnsThree = "microscope"
-            var questionOneAnsFour = "binoculars"
+            var questionOneAnsTwo = $('<input type="button" value="console.log"/>');
+            var questionOneAnsThree = $('<input type="button" value="microscope"/>');
+            var questionOneAnsFour = $('<input type="button" value="binoculars"/>');
 
             $("#question").append(questionOne);
             $("#one").append(questionOneAnsOne);
+            $("#two").append(questionOneAnsTwo);
+            $("#three").append(questionOneAnsThree);
+            $("#four").append(questionOneAnsFour);
             console.log(question1);
         });
 
