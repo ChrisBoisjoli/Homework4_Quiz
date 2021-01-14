@@ -15,3 +15,7 @@ body {
     right: 5px; 
     text-align: right;
 }
+#question {
+    color: red;
+    font-size: 30px;
+}
