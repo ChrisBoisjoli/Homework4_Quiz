@@ -11,11 +11,25 @@
 <body>
     <p id="highScore">High Score</p>
     <p id="time">Time: </p>
+    <div class="jumbotron">
     <div class="col text-center">
     <button type="button" class="btn btn-danger">START!</button>
     </div>
+    </div>
     <script>
-
+        var counter = 75;
+        var interval = setInterval(function() {
+        counter--;
+    // Display 'counter' wherever you want to display it.
+    if (counter <= 0) {
+     		clearInterval(interval);
+      	$('#timer').html("<h3>Count down complete</h3>");  
+        return;
+    }else{
+    	$('#time').text("Time: " + counter);
+      console.log("Timer --> " + counter);
+    }
+}, 1000);
     </script>
 </body>
 </html>
