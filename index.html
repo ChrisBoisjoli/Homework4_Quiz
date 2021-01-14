@@ -41,6 +41,7 @@
     
     <script>
         // Countdown Timer
+        
         var startBoxDiv = $("#jumbo1");
     $("#start").click(function(){
         var counter = 75;
@@ -119,6 +120,9 @@ function displayQuestion(q) {
             // if this is the right answer, increment numRight
             if(id === q.answerIdx) {
                 numRightSpan.innerHTML = ++numRight;
+            }
+            else {
+            //    need else statement to remove seconds
             }
 
             // if there is another question to be asked, run the function again
