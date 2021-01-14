@@ -67,11 +67,11 @@ $("#start").on("click", function () {
         // Question 1
         $("#start").on("click", function question1()
         {
-            var questionOne = ("<div>'What is a good way to find coding errors?'</div>")
-            var questionOneAnsOne = $('<input type="button" value="text find"/>');
-            var questionOneAnsTwo = $('<input type="button" value="console.log"/>');
-            var questionOneAnsThree = $('<input type="button" value="microscope"/>');
-            var questionOneAnsFour = $('<input type="button" value="binoculars"/>');
+            var questionOne = ("<div>What is a good way to find coding errors?</div>")
+            var questionOneAnsOne = $('<input type="button" class="btn btn-warning" value="text find"/>');
+            var questionOneAnsTwo = $('<input type="button" class="btn btn-warning" value="console.log"/>');
+            var questionOneAnsThree = $('<input type="button" class="btn btn-warning" value="microscope"/>');
+            var questionOneAnsFour = $('<input type="button" class="btn btn-warning" value="binoculars"/>');
 
             $("#question").append(questionOne);
             $("#one").append(questionOneAnsOne);
