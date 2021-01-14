@@ -21,10 +21,12 @@
     <!-- Answer buttons -->
     <div class="jumbotron" id="jumbo2">
         <div class="col text-center">
-            <div><span id="numRight">0</span> of <span id="numQuestions">0</span></div>
-            <div id="question"></div>
-            <div id="answers"></div>
-        </div>  
+    <div id="question"></div>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    </div>  
     </div>  
     <!-- <div id=questionBlock>
     <div class="col text-center" id="question"></div>
@@ -63,31 +65,31 @@ $("#start").on("click", function () {
         
         });
 
-
+        
         // Question 1
-        // $("#start").on("click", function question1()
-        // {
-        //     var questionOne = ("<div>What is a good way to find coding errors?</div>")
-        //     var questionOneAnsOne = $('<input type="button" class="btn btn-warning" value="text find"/>');
-        //     var questionOneAnsTwo = $('<input type="button" class="btn btn-warning" value="console.log"/>');
-        //     var questionOneAnsThree = $('<input type="button" class="btn btn-warning" value="microscope"/>');
-        //     var questionOneAnsFour = $('<input type="button" class="btn btn-warning" value="binoculars"/>');
+        $("#start").on("click", function question1()
+        {
+            var questionOne = ("<div>What is a good way to find coding errors?</div>")
+            var questionOneAnsOne = $('<input type="button" class="btn btn-warning" value="text find"/>');
+            var questionOneAnsTwo = $('<input type="button" class="btn btn-warning" value="console.log"/>');
+            var questionOneAnsThree = $('<input type="button" class="btn btn-warning" value="microscope"/>');
+            var questionOneAnsFour = $('<input type="button" class="btn btn-warning" value="binoculars"/>');
 
-        //     $("#question").append(questionOne);
-        //     $("#one").append(questionOneAnsOne);
-        //     $("#two").append(questionOneAnsTwo);
-        //     $("#three").append(questionOneAnsThree);
-        //     $("#four").append(questionOneAnsFour);
-        //     // needto fix if else statement
-        //     if(questionOneAnsTwo.clicked  == true) {
-        //         alert("correct")
-        //         // $("#jumbo2").append("<div>Correct!</div>");
-        //     }
-        //     else{alert("incorrect")};
-        //         // $("#jumbo2").append("<div>Incorrect!</div>");};
-        //     // console.log(question1);
-        //     console.log(questionOneAnsTwo);
-        // });
+            $("#question").append(questionOne);
+            $("#one").append(questionOneAnsOne);
+            $("#two").append(questionOneAnsTwo);
+            $("#three").append(questionOneAnsThree);
+            $("#four").append(questionOneAnsFour);
+            // needto fix if else statement
+            if(questionOneAnsTwo.clicked  == true) {
+                alert("correct")
+                // $("#jumbo2").append("<div>Correct!</div>");
+            }
+            else{alert("incorrect")};
+                // $("#jumbo2").append("<div>Incorrect!</div>");};
+            // console.log(question1);
+            console.log(questionOneAnsTwo);
+        });
 
         
     </script>
