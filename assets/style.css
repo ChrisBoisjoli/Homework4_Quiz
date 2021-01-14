@@ -15,6 +15,10 @@ body {
     right: 5px; 
     text-align: right;
 }
+#quizTitle{
+    color: red;
+    font-size: 30px;
+}
 #question {
     color: red;
     font-size: 30px;
