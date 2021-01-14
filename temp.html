@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    
+    <h1>-Test v1-</h1>
+    <h2>Simple Math</h2>
+    <div id="container">
+         <div><span id="numRight">0</span> of <span id="numQuestions">0</span></div>
+            <div id="question"></div>
+            <div id="answers"></div>
+        </div>
+<script>
+    questions = [
+    {
+        question: 'What is 0 / 6 ?',
+        options: ['0','1','2'],
+        answerIdx: 0
+    },
+    {
+        question: 'What is 2 + 2 ?',
+        options: ['72','4','3.5'],
+        answerIdx: 1
+    }
+]
+numRight = 0,
+numQuestions = 0,
+answerDiv = document.getElementById('answers'),
+questionDiv = document.getElementById('question'),
+numRightSpan = document.getElementById('numRight'),
+numQuestionsSpan = document.getElementById('numQuestions');
+
+function displayQuestion(q) {  
+    // insert the question text into the appropriate HTML element
+    questionDiv.innerHTML = q.question;
+
+    // remove any pre-existing answer buttons
+    answerDiv.innerHTML = '';
+
+    // for each option in the 'options' array, create a button
+    // attach an 'onclick' event handler that will update
+    // the question counts and display the next question in the array
+    for(i = 0; i < q.options.length; i++) {
+        btn = document.createElement('button');
+        btn.innerHTML = q.options[i];
+        btn.setAttribute('id',i);
+
+        // event handler for each answer button
+        btn.onclick = function() {
+            var id = parseInt(this.getAttribute('id'),10);
+            numQuestionsSpan.innerHTML = ++numQuestions;
+
+            // if this is the right answer, increment numRight
+            if(id === q.answerIdx) {
+                numRightSpan.innerHTML = ++numRight;
+            }
+
+            // if there is another question to be asked, run the function again
+            // otherwise, complete the test however you see fit
+            if(questions.length) {
+                displayQuestion(questions.shift()); 
+            } else {
+                alert('Done! You got '+numRight+' of '+numQuestions+' right!');
+            }                    
+        }
+        answerDiv.appendChild(btn);        
+    }
+}
+displayQuestion(questions.shift());
+</script>
+</body>
+</html>
