@@ -78,12 +78,15 @@ $("#start").on("click", function () {
             $("#two").append(questionOneAnsTwo);
             $("#three").append(questionOneAnsThree);
             $("#four").append(questionOneAnsFour);
-
-            if (questionOneAnsTwo.clicked == true){
-                $("#jumbo2").append("<div>Correct!</div>");
+            // needto fix if else statement
+            if(questionOneAnsTwo.clicked  == true) {
+                alert("correct")
+                // $("#jumbo2").append("<div>Correct!</div>");
             }
-            else{$("#jumbo2").append("<div>Incorrect!</div>");};
+            else{alert("incorrect")};
+                // $("#jumbo2").append("<div>Incorrect!</div>");};
             // console.log(question1);
+            console.log(questionOneAnsTwo);
         });
 
         
