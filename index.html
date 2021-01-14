@@ -78,7 +78,12 @@ $("#start").on("click", function () {
             $("#two").append(questionOneAnsTwo);
             $("#three").append(questionOneAnsThree);
             $("#four").append(questionOneAnsFour);
-            console.log(question1);
+
+            if (questionOneAnsTwo.clicked == true){
+                $("#jumbo2").append("<div>Correct!</div>");
+            }
+            else{$("#jumbo2").append("<div>Incorrect!</div>");};
+            // console.log(question1);
         });
 
         
