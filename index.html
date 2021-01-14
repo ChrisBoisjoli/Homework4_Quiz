@@ -31,6 +31,7 @@
     </div>
     <script>
         // Countdown Timer
+        var startBoxDiv = $(".jumbotron");
     $("#start").click(function(){
         var counter = 75;
         var interval = setInterval(function() {
@@ -47,7 +48,9 @@
     }
 }, 1000);});
         
-       
+$("#start").on("click", function () {
+        startBoxDiv.empty();
+		});
         
     </script>
 </body>
