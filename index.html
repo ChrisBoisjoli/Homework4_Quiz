@@ -74,9 +74,9 @@ $("#start").on("click", function () {
         answerIdx: 2
     },
     {
-        question: 'What is Bootstrap?',
-        options: ["folder", "backup", "CDN","bucket"],
-        answerIdx: 2
+        question: 'What do you use to denote an ID ?',
+        options: ["period", "comma", "semi-colon","hashtag"],
+        answerIdx: 3
     },
     {
         question: 'What is Bootstrap?',
@@ -95,7 +95,7 @@ answerDiv = document.getElementById('answers'),
 questionDiv = document.getElementById('question'),
 numRightSpan = document.getElementById('numRight'),
 numQuestionsSpan = document.getElementById('numQuestions');
-
+$("#start").on("click", function displayQuestion(){
 function displayQuestion(q) {  
     // insert the question text into the appropriate HTML element
     questionDiv.innerHTML = q.question;
@@ -132,7 +132,7 @@ function displayQuestion(q) {
         answerDiv.appendChild(btn);        
     }
 }
-displayQuestion(questions.shift());
+displayQuestion(questions.shift());});
 
         
         
