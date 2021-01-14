@@ -11,17 +11,23 @@
 <body>
     <p id="highScore">High Score</p>
     <p id="time">Time: </p>
-    <div class="jumbotron">
+    <div class="jumbotron" id="jumbo1">
     <div class="col text-center">
         <div class="col text-center" id="quizTitle">Coding Quiz</div>
         <!-- start button  -->
     <button type="button" class="btn btn-danger" id="start">START!</button>
+    </div>
+    </div>
     <!-- Answer buttons -->
+    <div class="jumbotron" id="jumbo2">
+        <div class="col text-center">
     <div id="question"></div>
     <div id="one"></div>
     <div id="two"></div>
     <div id="three"></div>
     <div id="four"></div>
+    </div>  
+    </div>  
     <!-- <div id=questionBlock>
     <div class="col text-center" id="question"></div>
     <div class="col text-center">
@@ -34,10 +40,10 @@
     <button type="button" class="btn btn-warning" id="four"> </button></div>
     </div>
     </div> -->
-    </div>
+    
     <script>
         // Countdown Timer
-        var startBoxDiv = $(".jumbotron");
+        var startBoxDiv = $("#jumbo1");
     $("#start").click(function(){
         var counter = 75;
         var interval = setInterval(function() {
@@ -50,7 +56,7 @@
         return;
     }else{
     	$('#time').text("Time: " + counter);
-      console.log("Timer --> " + counter);
+    //   console.log("Timer --> " + counter);
     }
 }, 1000);});
         
@@ -59,15 +65,17 @@ $("#start").on("click", function () {
         
         });
         // Question 1
-        function question1(){
-            var questionOne = "What is a good way to find coding errors?"
+        $("#start").on("click", function question1()
+        {
+            var questionOne = ("<div>'What is a good way to find coding errors?'</div>")
             var questionOneAnsOne = "text find"
             var questionOneAnsTwo = "console.log"
             var questionOneAnsThree = "microscope"
             var questionOneAnsFour = "binoculars"
 
-
-        };
+            $("#question").append(questionOne);
+            console.log(question1);
+        });
 
         
     </script>
