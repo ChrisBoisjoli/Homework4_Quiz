@@ -128,7 +128,7 @@ function displayQuestion(q) {
             if(questions.length) {
                 displayQuestion(questions.shift()); 
             } else {
-                 
+                clearInterval(interval);
                 mainBoxDiv.empty();
 
                 alert(" your score is " + counter);
