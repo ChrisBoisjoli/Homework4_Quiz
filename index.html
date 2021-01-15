@@ -33,7 +33,7 @@
         var startBoxDiv = $("#jumbo1");
         var mainBoxDiv = $("#jumbo2");
         var interval;
-        var score = counter; 
+        
     $("#start").click(function(){
         
          interval = setInterval(function() {
@@ -131,7 +131,7 @@ function displayQuestion(q) {
                  
                 mainBoxDiv.empty();
 
-                
+                alert(" your score is " + counter);
             }                    
         }
         answerDiv.appendChild(btn);        
