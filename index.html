@@ -43,6 +43,7 @@
         // Countdown Timer
         var counter = 60;
         var startBoxDiv = $("#jumbo1");
+        var mainBoxDiv = $("#jumbo2");
         var interval;
     $("#start").click(function(){
         
@@ -131,7 +132,6 @@ function displayQuestion(q) {
                     counter -= 15; 
                 }                
 
-            //    need else statement to remove seconds
             }
 
             // if there is another question to be asked, run the function again
@@ -139,6 +139,9 @@ function displayQuestion(q) {
             if(questions.length) {
                 displayQuestion(questions.shift()); 
             } else {
+                 
+                mainBoxDiv.empty();
+                
                 alert('Done! You got '+numRight+' of '+numQuestions+' right!');
             }                    
         }
