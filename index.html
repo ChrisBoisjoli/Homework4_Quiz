@@ -41,17 +41,18 @@
     
     <script>
         // Countdown Timer
-    
-        var startBoxDiv = $("#jumbo1");
-    $("#start").click(function(){
         var counter = 60;
-        var interval = setInterval(function() {
+        var startBoxDiv = $("#jumbo1");
+        var interval;
+    $("#start").click(function(){
+        
+         interval = setInterval(function() {
         
         counter--;
     
-    if (counter <= 0) {
+    if (counter === 0) {
      		clearInterval(interval);
-      	$('#timer').text("Game Over!");  
+      	$('#time').text("Game Over!");  
         return;
     }else{
     	$('#time').text("Time: " + counter);
@@ -122,7 +123,14 @@ function displayQuestion(q) {
                 numRightSpan.innerHTML = ++numRight;
             }
             else {
-                
+                if (counter <= 10){
+                    clearInterval(interval);
+                    $('#time').text("Game Over!");
+                }
+                else{
+                    counter -= 15; 
+                }                
+
             //    need else statement to remove seconds
             }
 
