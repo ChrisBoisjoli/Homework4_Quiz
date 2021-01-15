@@ -45,19 +45,20 @@
         var startBoxDiv = $("#jumbo1");
         var mainBoxDiv = $("#jumbo2");
         var interval;
+        var score = counter; 
     $("#start").click(function(){
         
          interval = setInterval(function() {
         
         counter--;
     
-    if (counter === 0) {
+    if (counter <= 0) {
      		clearInterval(interval);
       	$('#time').text("Game Over!");  
         return;
     }else{
     	$('#time').text("Time: " + counter);
-    //   console.log("Timer --> " + counter);
+      console.log("Timer --> " + counter);
     }
 }, 1000);});
         
@@ -141,8 +142,8 @@ function displayQuestion(q) {
             } else {
                  
                 mainBoxDiv.empty();
+
                 
-                alert('Done! You got '+numRight+' of '+numQuestions+' right!');
             }                    
         }
         answerDiv.appendChild(btn);        
