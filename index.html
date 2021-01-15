@@ -136,6 +136,48 @@ function displayQuestion(q) {
         }
         answerDiv.appendChild(btn);        
     }
+    $(".stopbutton").click(function(){
+        if(starttimer== "true"){
+            starttimer= "false";
+            updateScores(i);
+            darken(".space");
+        };
+    });
+
+function updateScores(counter){
+
+    if(newScore > highScore1){
+        var redScore="score1";
+        highScore5=highScore4;
+        highScore4=highScore3;
+        highScore3=highScore2;
+        highScore2=highScore1;
+        highScore1=newScore;
+    }else if(newScore > highScore2){
+        var redScore="score2";
+        highScore5=highScore4;
+        highScore4=highScore3;
+        highScore3=highScore2;
+        highScore2=newScore;
+    }else if(newScore > highScore3){
+        var redScore="score3";
+        highScore5=highScore4;
+        highScore4=highScore3;
+        highScore3=newScore;
+        };
+
+    var highScorePlace1= "<div class='score' id='score1'><h1><center>" + highScore1.toFixed(2) + "</center></h1></div>";
+    var highScorePlace2= "<div class='score' id='score2'><h1><center>" + highScore2.toFixed(2) + "</center></h1></div>";
+    var highScorePlace3= "<div class='score' id='score3'><h1><center>" + highScore3.toFixed(2) + "</center></h1></div>";
+
+
+    $("#highscores").append(highScorePlace1, highScorePlace2, highScorePlace3, highScorePlace4, highScorePlace5, resetButton);
+    $("#highscores").slideDown(1000);
+    $("#"+redScore).css("color", "red");
+    $(".resetbutton").click(function(){
+        gameReset();
+    });
+};
 }
 displayQuestion(questions.shift());});
         
